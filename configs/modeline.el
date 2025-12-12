@@ -1,3 +1,3 @@
 ;;-*- lexical-binding: t; -*-
 
-(use-package powerline :config (powerline-default-theme))
+(use-package doom-modeline :config (doom-modeline-mode))
