@@ -9,7 +9,4 @@
 		 (interactive)
 		 (flycheck-list-errors)
 		 (switch-to-buffer-other-window flycheck-error-list-buffer))))
-  :hook (lsp-mode .
-		  (lambda ()
-		    (unless (eq major-mode 'emacs-lisp-mode)
-		      (flycheck-mode)))))
+  :hook (lsp-mode . flycheck-mode))
