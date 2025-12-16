@@ -13,3 +13,7 @@
 
 (use-package treemacs-nerd-icons
   :config (treemacs-load-theme "nerd-icons"))
+
+(use-package helm-icons
+  :custom (helm-icons-provider 'nerd-icons)
+  :config (helm-icons-enable))

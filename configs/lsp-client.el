@@ -33,27 +33,6 @@
       (lsp-format-region (region-beginning) (region-end))
     (lsp-format-buffer)))
 
-(defun fishman-lsp-treemacs-symbols-toggle ()
-  (interactive)
-  (let ((window (get-buffer-window lsp-treemacs-symbols-buffer-name)))
-    (if window (delete-window window) (lsp-treemacs-symbols))))
-
-(use-package lsp-treemacs
-  :after lsp-mode
-  :custom ((lsp-treemacs-symbols-sort-functions '(lsp-treemacs-sort-by-kind)))
-  :bind ((:map lsp-mode-map ("<f6>" . fishman-lsp-treemacs-symbols-toggle))
-	 (:map treemacs-mode-map
-	       ("<f6>" . fishman-lsp-treemacs-symbols-toggle)))
-  :hook (lsp-mode . lsp-treemacs-sync-mode)
-  :config (fishman-save-current-buffer-before 'lsp-treemacs-symbols))
-
-(add-hook 'helm-before-initialize-hook
-	  (lambda ()
-	    (when (boundp 'lsp-treemacs-symbols-buffer-name)
-	      (let ((window
-		     (get-buffer-window lsp-treemacs-symbols-buffer-name)))
-		(when window (delete-window window))))))
-
 (use-package helm-lsp
   :after lsp-mode
   :bind (:map lsp-mode-map

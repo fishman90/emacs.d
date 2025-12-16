@@ -9,7 +9,7 @@ fi
 
 pyenv doctor
 
-target_version="3.14.2"
+target_version="3.11.14"
 pyenv install -s $target_version
 pyenv global $target_version
 

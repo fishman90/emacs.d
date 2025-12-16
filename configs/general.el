@@ -24,10 +24,7 @@
 (general-define-key :keymaps 'override "M-p"
 		    (lambda ()
 		      (interactive)
-		      (xref-push-marker-stack)
-		      (message "pushed a point to the marker stack")))
-
-(general-define-key :keymaps 'override "M-r" 'query-replace)
+		      (xref-push-marker-stack)))
 
 (general-define-key :keymaps 'override "C-a"
 		    (lambda ()
@@ -61,6 +58,9 @@
 		      (goto-char (point-max))))
 
 (general-define-key :keymaps 'override "S-<up>" 'windmove-up)
+
 (general-define-key :keymaps 'override "S-<down>" 'windmove-down)
+
 (general-define-key :keymaps 'override "S-<left>" 'windmove-left)
+
 (general-define-key :keymaps 'override "S-<right>" 'windmove-right)

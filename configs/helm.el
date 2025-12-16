@@ -9,6 +9,7 @@
   :config ; nofmt
   (helm-adaptive-mode)
   (helm-autoresize-mode)
+  (helm-ff-icon-mode)
   (require 'helm-buffers)
   (set-face-background 'helm-buffer-directory nil)
   (set-face-foreground 'helm-buffer-directory "orange")
@@ -20,21 +21,20 @@
   :bind ("C-s" . helm-swoop)
   :config (fishman-save-current-buffer-before 'helm-swoop))
 
-(use-package projectile
-  :custom ((projectile-auto-discover t)
-	   (projectile-indexing-method 'hybrid)))
-
 (use-package helm-rg
   :bind ("C-b" . helm-rg)
   :config (fishman-save-some-buffers-before 'helm-rg))
 
+(use-package projectile
+  :custom ((projectile-auto-discover t)
+	   (projectile-indexing-method 'hybrid)))
+
 (use-package helm-projectile
   :after projectile
-  :init ; nofmt
-  (recentf-mode)
+  :init (recentf-mode)
   :custom ((helm-projectile-ignore-strategy 'search-tool)
 	   (helm-projectile-fuzzy-match nil))
-  :bind ; nofmt
+  :bind	; nofmt
   ("C-f" . helm-projectile-find-file)
   ("C-p" . helm-projectile-rg)
   ("C-r" . helm-projectile-recentf)
