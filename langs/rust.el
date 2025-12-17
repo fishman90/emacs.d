@@ -1,6 +1,26 @@
 ;;-*- lexical-binding: t; -*-
 
 (use-package rust-mode
-  :custom (lsp-rust-analyzer-cargo-target-dir t)
-  :hook (rust-mode . lsp-deferred)
-  :bind (:map rust-mode-map ("M-\\" . fishman-lsp-format-fun)))
+  :custom ((lsp-rust-analyzer-cargo-target-dir t)
+	   (lsp-rust-analyzer-cargo-watch-command "clippy"))
+  :bind (:map rust-mode-map ("M-\\" . fishman-lsp-format-fun))
+  :hook (rust-mode . lsp-deferred))
+
+(use-package cargo-mode :hook (rust-mode . cargo-minor-mode))
+
+(use-package toml-mode
+  :bind (:map toml-mode-map
+	      ("M-\\" .
+	       (lambda ()
+		 (interactive)
+		 (save-buffer)
+		 (display-message-or-buffer
+		  (shell-command-to-string
+		   (format "tombi format %s" (buffer-file-name))))
+		 (revert-buffer t t t))))
+  :hook (toml-mode .
+		   (lambda ()
+		     (add-to-list
+		      (make-local-variable 'lsp-disabled-clients)
+		      'taplo)
+		     (lsp-deferred))))

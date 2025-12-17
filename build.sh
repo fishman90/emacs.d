@@ -12,3 +12,5 @@ tar xvf emacs-"$target_version".tar.gz
   make -j"$(nproc)"
   sudo make install
 )
+
+sudo apt install -y git
