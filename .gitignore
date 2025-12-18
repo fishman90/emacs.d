@@ -1,0 +1,14 @@
+.cache
+.lsp-session-v1
+.projectile
+auto-save-list
+custom.el
+eln-cache
+elpa
+helm-adaptive-history
+places
+recentf
+straight
+tramp
+transient
+undo-tree-history

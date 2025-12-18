@@ -18,20 +18,30 @@
   (fishman-save-some-buffers-before 'helm-M-x))
 
 (use-package helm-swoop
-  :bind ("C-s" . helm-swoop)
+  :custom (helm-swoop-use-line-number-face t)
+  :bind ("C-s" .
+	 (lambda ()
+	   (interactive)
+	   (if (string-equal major-mode "dired-mode")
+	       (let ((helm-swoop-pre-input-function (lambda ())))
+		 (helm-swoop))
+	     (helm-swoop))))
   :config (fishman-save-current-buffer-before 'helm-swoop))
 
 (use-package helm-rg
   :bind ("C-b" . helm-rg)
   :config (fishman-save-some-buffers-before 'helm-rg))
 
+(use-package helm-xref
+  :config (setq xref-show-xrefs-function 'helm-xref-show-xrefs-27
+		xref-show-definitions-function 'helm-xref-show-defs-27))
+
 (use-package projectile
   :custom ((projectile-auto-discover t)
-	   (projectile-indexing-method 'hybrid)))
+	   (projectile-indexing-method 'alien)))
 
 (use-package helm-projectile
   :after projectile
-  :init (recentf-mode)
   :custom ((helm-projectile-ignore-strategy 'search-tool)
 	   (helm-projectile-fuzzy-match nil))
   :bind	; nofmt
@@ -44,7 +54,3 @@
   (fishman-save-some-buffers-before 'helm-projectile-rg)
   (fishman-save-some-buffers-before 'helm-projectile-recentf)
   (fishman-save-some-buffers-before 'helm-projectile-switch-to-buffer))
-
-(use-package helm-xref
-  :config (setq xref-show-xrefs-function 'helm-xref-show-xrefs-27
-		xref-show-definitions-function 'helm-xref-show-defs-27))

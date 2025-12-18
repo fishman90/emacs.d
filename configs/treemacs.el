@@ -19,14 +19,27 @@
   (treemacs-fringe-indicator-mode 'always)
   (treemacs-filewatch-mode)
   (treemacs-follow-mode)
-  (treemacs-project-follow-mode))
+  (treemacs-project-follow-mode)
+  (add-hook 'helm-before-initialize-hook
+	    (lambda ()
+	      (when (equal (treemacs-current-visibility) 'visible)
+		(fishman-treemacs-toggle-fun))))
+  (add-hook 'helm-cleanup-hook
+	    (lambda ()
+	      (unless (equal (treemacs-current-visibility) 'visible)
+		(fishman-treemacs-toggle-fun))))
 
-(add-hook 'helm-before-initialize-hook
-	  (lambda ()
-	    (when (equal (treemacs-current-visibility) 'visible)
-	      (fishman-treemacs-toggle-fun))))
+  (setq fishman-treemacs-window-exists nil)
 
-(add-hook 'helm-cleanup-hook
-	  (lambda ()
-	    (unless (equal (treemacs-current-visibility) 'visible)
-	      (fishman-treemacs-toggle-fun))))
+  (advice-add 'undo-tree-visualize :before
+	      (lambda (&rest _)
+		(when (equal (treemacs-current-visibility) 'visible)
+		  (setq fishman-treemacs-window-exists t)
+		  (fishman-treemacs-toggle-fun))))
+  (advice-add 'undo-tree-visualizer-quit :after
+	      (lambda (&rest _)
+		(when fishman-treemacs-window-exists
+		  (let ((window (selected-window)))
+		    (setq fishman-treemacs-window-exists nil)
+		    (fishman-treemacs-toggle-fun)
+		    (select-window window))))))

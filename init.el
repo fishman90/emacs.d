@@ -8,6 +8,10 @@
 (global-display-line-numbers-mode)
 (column-number-mode)
 
+(recentf-mode)
+(customize-set-value 'recentf-max-saved-items 100)
+(customize-set-value 'recentf-auto-cleanup 'never)
+
 (save-place-mode)
 (blink-cursor-mode 1)
 (size-indication-mode)
