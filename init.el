@@ -49,6 +49,8 @@
                  (apply orig-fun args)
                  (fishman-save-current-buffer))))
 
+(fishman-save-current-buffer-around 'indent-region)
+
 (defun fishman-save-some-buffers ()
   (interactive)
   (let ((inhibit-message t)) (save-some-buffers t)))

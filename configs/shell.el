@@ -7,8 +7,6 @@
  '(sh-indentation 2)
  '(sh-indent-comment t))
 
-(fishman-save-current-buffer-around 'indent-region)
-
 (define-key sh-mode-map
 	    (kbd "M-\\")
 	    (lambda ()
