@@ -24,8 +24,14 @@
 (customize-set-value 'make-backup-files nil)
 (customize-set-value 'create-lockfiles nil)
 
+(show-paren-mode)
+
+(electric-indent-mode)
+(electric-layout-mode)
+(electric-pair-mode)
+(electric-quote-mode)
+
 (setq indent-tabs-mode nil)
-(setq tab-width 4)
 
 (fset 'yes-or-no-p 'y-or-n-p)
 

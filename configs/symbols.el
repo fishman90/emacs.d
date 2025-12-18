@@ -2,10 +2,11 @@
 
 (defun fishman-symbols-outline-toggle-fun ()
   (interactive)
-  (let ((window (get-buffer-window symbols-outline-buffer-name)))
-    (if (and window (window-live-p window))
-	(delete-window window)
-      (symbols-outline-show))))
+  (when (derived-mode-p 'prog-mode)
+    (let ((window (get-buffer-window symbols-outline-buffer-name)))
+      (if (and window (window-live-p window))
+	  (delete-window window)
+	(symbols-outline-show)))))
 
 (use-package symbols-outline
   :custom ((symbols-outline-no-other-window nil)
