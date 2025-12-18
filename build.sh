@@ -6,11 +6,12 @@ wget https://github.com/emacs-mirror/emacs/archive/refs/tags/emacs-"$target_vers
 tar xvf emacs-"$target_version".tar.gz
 
 (
-  cd emacs-emacs-"$target_version" || exit
+  cd emacs-emacs-"$target_version"
   ./autogen.sh
   ./configure --with-native-compilation=aot --with-tree-sitter
   make -j"$(nproc)"
   sudo make install
 )
 
+sudo apt install -y xclip
 sudo apt install -y git
