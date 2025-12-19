@@ -10,8 +10,11 @@
   :hook ; nofmt
   (magit-status-mode . display-line-numbers-mode)
   (magit-log-mode . display-line-numbers-mode)
-  :config ((fishman-save-some-buffers-before 'magit-status)
-	   (fishman-save-some-buffers-before 'magit-log-current)
-	   (fishman-save-some-buffers-before 'magit-log-buffer-file)))
+  :config ; nofmt
+  (fishman-save-some-buffers-before 'magit-status)
+  (fishman-save-some-buffers-before 'magit-log-current)
+  (fishman-save-some-buffers-before 'magit-log-buffer-file))
 
 (use-package magit-todos :after magit :config (magit-todos-mode))
+
+(use-package git-modes)
