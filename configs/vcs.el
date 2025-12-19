@@ -4,7 +4,9 @@
 
 (use-package magit
   :custom (magit-format-file-function 'magit-format-file-nerd-icons)
+  :bind ("C-x z" . magit-log-buffer-file)
   :hook (magit-status-mode . display-line-numbers-mode)
-  :config (fishman-save-some-buffers-before 'magit-status))
+  :config ((fishman-save-some-buffers-before 'magit-status)
+	   (fishman-save-some-buffers-before 'magit-log-buffer-file)))
 
 (use-package magit-todos :after magit :config (magit-todos-mode))
