@@ -6,6 +6,7 @@ custom.el
 eln-cache
 elpa
 helm-adaptive-history
+network-security.data
 places
 recentf
 straight
