@@ -8,7 +8,8 @@
   (prog-mode .
 	     (lambda ()
 	       (setq-local company-backends
-			   '((company-capf :with company-yasnippet)))))
+			   '((company-capf :with company-yasnippet)
+			     company-files))))
   (text-mode .
 	     (lambda ()
 	       (setq-local company-backends
