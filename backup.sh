@@ -9,12 +9,8 @@ mkdir "$backup_path"
   cp *.sh "$backup_path"
   cp *.el "$backup_path"
 
-  mkdir "$backup_path"/configs
-  mkdir "$backup_path"/langs
-
-  cp configs/*.el "$backup_path/configs"
-  cp langs/*.el "$backup_path/langs"
-
+  cp -a -r configs "$backup_path"
+  cp -a -r langs "$backup_path"
   cp -a -r scripts "$backup_path"
 )
 
