@@ -8,7 +8,7 @@
 		 (save-buffer)
 		 (display-message-or-buffer
 		  (shell-command-to-string
-		   (format "autoflake --remove-all-unused-imports --remove-duplicate-keys --in-place %s"
+		   (format "autoflake --remove-all-unused-imports --in-place %s"
 			   (buffer-file-name))))
 		 (revert-buffer t t t)
 		 (python-isort-buffer)
