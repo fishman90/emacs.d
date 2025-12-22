@@ -72,18 +72,6 @@
                  (apply orig-fun args)
                  (fishman-save-some-buffers))))
 
-(defun fishman-native-compile ()
-  (interactive)
-  (mapc
-   (lambda (config-file) (native-compile config-file))
-   (directory-files user-emacs-directory :match "\\.el$"))
-  (dolist (config-dir '("configs" "langs"))
-    (mapc
-     (lambda (config-file) (native-compile config-file))
-     (directory-files
-      (expand-file-name config-dir user-emacs-directory)
-      :match "\\.el$"))))
-
 (load-file (expand-file-name "bootstrap.el" user-emacs-directory))
 
 (dolist (config-dir '("configs" "langs"))
