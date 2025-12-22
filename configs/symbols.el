@@ -30,8 +30,8 @@
 		(unless (window-valid-p window)
 		  (symbols-outline-show)))))
 
-  (setq fishman-symbols-outline-window-exists nil)
-  (setq fishman-current-selected-window nil)
+  (defvar fishman-symbols-outline-window-exists nil)
+  (defvar fishman-current-selected-window nil)
 
   (advice-add 'undo-tree-visualize :before
 	      (lambda (&rest _)
@@ -45,7 +45,7 @@
   (advice-add 'undo-tree-visualizer-quit :after
 	      (lambda (&rest _)
 		(when fishman-symbols-outline-window-exists
-		  (setq fishman-symbols-outline-window-exists nil)
-		  (setq fishman-current-selected-window nil)
 		  (symbols-outline-show)
-		  (select fishman-current-selected-window)))))
+		  (select-window fishman-current-selected-window)
+		  (setq fishman-symbols-outline-window-exists nil)
+		  (setq fishman-current-selected-window nil)))))

@@ -20,3 +20,4 @@ go install -v github.com/davidrjenni/reftools/cmd/fillstruct@latest
 go install -v honnef.co/go/tools/cmd/staticcheck@latest
 go install -v github.com/golangci/golangci-lint/v2/cmd/golangci-lint@latest
 go install -v github.com/go-delve/delve/cmd/dlv@latest
+go install -v github.com/fullstorydev/grpcurl/cmd/grpcurl@latest

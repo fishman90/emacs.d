@@ -7,7 +7,7 @@
 (defun fishman-smart-comment-fun (arg)
   (interactive "*P")
   (smart-comment arg)
-  (next-line))
+  (forward-line))
 
 (require 'newcomment)
 (customize-set-value 'comment-style 'extra-line)
@@ -24,4 +24,4 @@
       (comment-or-uncomment-region
        (line-beginning-position)
        (line-end-position))
-      (next-line))))
+      (forward-line))))

@@ -29,7 +29,7 @@
 	      (unless (equal (treemacs-current-visibility) 'visible)
 		(fishman-treemacs-toggle-fun))))
 
-  (setq fishman-treemacs-window-exists nil)
+  (defvar fishman-treemacs-window-exists nil)
 
   (advice-add 'undo-tree-visualize :before
 	      (lambda (&rest _)

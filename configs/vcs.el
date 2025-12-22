@@ -6,7 +6,7 @@
   :custom (magit-format-file-function 'magit-format-file-nerd-icons)
   :bind ; nofmt
   ("C-x j" . magit-log-current)
-  ("C-x z" . magit-log-buffer-file)
+  ("C-x y" . magit-log-buffer-file)
   :hook ; nofmt
   (magit-status-mode . display-line-numbers-mode)
   (magit-log-mode . display-line-numbers-mode)

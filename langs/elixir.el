@@ -6,3 +6,5 @@
 	   (lsp-elixir-server-command '("elixir-ls")))
   :bind (:map elixir-mode-map ("M-\\" . fishman-lsp-format-fun))
   :hook (elixir-mode . lsp-deferred))
+
+(use-package mix :hook (elixir-mode . mix-minor-mode))

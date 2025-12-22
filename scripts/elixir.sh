@@ -2,7 +2,7 @@
 
 mise=$(command -v mise || true)
 if [[ "$mise" == "" ]]; then
-  curl https://mise.run | sh
+  curl https://mise.run | bash
 else
   mise self-update
 fi

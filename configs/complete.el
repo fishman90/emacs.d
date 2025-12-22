@@ -13,5 +13,5 @@
   (text-mode .
 	     (lambda ()
 	       (setq-local company-backends
-                           '(company-ispell company-dabbrev))))
+			   '(company-ispell company-dabbrev))))
   :config (global-company-mode))

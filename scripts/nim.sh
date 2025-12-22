@@ -2,7 +2,7 @@
 
 choosenim=$(command -v choosenim || true)
 if [[ "$choosenim" == "" ]]; then
-  curl https://nim-lang.org/choosenim/init.sh -sSf | sh
+  curl -sSf https://nim-lang.org/choosenim/init.sh | bash
 else
   choosenim update stable
 fi
