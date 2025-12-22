@@ -13,8 +13,6 @@ target_version="3.11.14"
 pyenv install -s $target_version
 pyenv global $target_version
 
-pip install --user --upgrade pip
+pip install --user --upgrade pip pip-autoremove
 pip install --user --upgrade pyright isort black autoflake
-pip install --user --upgrade pip-autoremove
-pip install --user --upgrade poetry
-pip install --user --upgrade tombi
+pip install --user --upgrade poetry tombi
