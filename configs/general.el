@@ -21,11 +21,6 @@
 			   (line-beginning-position)
 			   (line-end-position))))))))
 
-(general-define-key :keymaps 'override "M-p"
-		    (lambda ()
-		      (interactive)
-		      (xref-push-marker-stack)))
-
 (general-define-key :keymaps 'override "C-a"
 		    (lambda ()
 		      (interactive)
