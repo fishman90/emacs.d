@@ -8,7 +8,7 @@ tar xvf emacs-"$target_version".tar.gz
 (
   cd emacs-emacs-"$target_version"
   ./autogen.sh
-  ./configure --with-native-compilation=aot --with-tree-sitter
+  ./configure --with-native-compilation=aot
   make -j"$(nproc)"
   sudo make install
 )
