@@ -6,4 +6,4 @@
   :bind ("C-v" . vterm-toggle))
 
 (use-package vterm-toggle
-  :config (fishman-save-some-buffers-around 'vterm-toggle))
+  :config (fishman/save-some-buffers-around 'vterm-toggle))

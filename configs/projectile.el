@@ -13,9 +13,9 @@
   (require 'helm-buffers)
   (set-face-background 'helm-buffer-directory nil)
   (set-face-foreground 'helm-buffer-directory "orange")
-  (fishman-save-some-buffers-before 'helm-recentf)
-  (fishman-save-some-buffers-before 'helm-buffer-list)
-  (fishman-save-some-buffers-before 'helm-M-x))
+  (fishman/save-some-buffers-before 'helm-recentf)
+  (fishman/save-some-buffers-before 'helm-buffer-list)
+  (fishman/save-some-buffers-before 'helm-M-x))
 
 (use-package helm-swoop
   :custom (helm-swoop-use-line-number-face t)
@@ -26,11 +26,11 @@
 	       (let ((helm-swoop-pre-input-function (lambda ())))
 		 (helm-swoop))
 	     (helm-swoop))))
-  :config (fishman-save-current-buffer-before 'helm-swoop))
+  :config (fishman/save-current-buffer-before 'helm-swoop))
 
 (use-package helm-rg
   :bind ("C-b" . helm-rg)
-  :config (fishman-save-some-buffers-before 'helm-rg))
+  :config (fishman/save-some-buffers-before 'helm-rg))
 
 (use-package helm-xref
   :config (setq xref-show-xrefs-function 'helm-xref-show-xrefs-27
@@ -38,7 +38,8 @@
 
 (use-package projectile
   :custom ((projectile-auto-discover t)
-	   (projectile-indexing-method 'alien)))
+	   (projectile-indexing-method 'alien)
+	   (projectile-buffers-filter-function 'projectile-buffers-with-file)))
 
 (use-package helm-projectile
   :after projectile
@@ -50,7 +51,7 @@
   ("C-r" . helm-projectile-recentf)
   ("C-x b" . helm-projectile-switch-to-buffer)
   :config ; nofmt
-  (fishman-save-some-buffers-before 'helm-projectile-find-file)
-  (fishman-save-some-buffers-before 'helm-projectile-rg)
-  (fishman-save-some-buffers-before 'helm-projectile-recentf)
-  (fishman-save-some-buffers-before 'helm-projectile-switch-to-buffer))
+  (fishman/save-some-buffers-before 'helm-projectile-find-file)
+  (fishman/save-some-buffers-before 'helm-projectile-rg)
+  (fishman/save-some-buffers-before 'helm-projectile-recentf)
+  (fishman/save-some-buffers-before 'helm-projectile-switch-to-buffer))

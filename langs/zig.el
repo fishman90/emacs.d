@@ -11,5 +11,5 @@
 		   (zig-format-buffer)))))
   :hook (zig-mode . lsp-deferred)
   :config ; nofmt
-  (fishman-save-current-buffer-around 'zig-format-region)
-  (fishman-save-current-buffer-around 'zig-format-buffer))
+  (fishman/save-current-buffer-around 'zig-format-region)
+  (fishman/save-current-buffer-around 'zig-format-buffer))

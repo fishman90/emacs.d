@@ -1,19 +1,19 @@
 ;;-*- lexical-binding: t; -*-
 
 (use-package smart-comment
-  :bind (:map prog-mode-map ("C-\\" . fishman-smart-comment-fun))
-  :config (fishman-save-current-buffer-around 'smart-comment))
+  :bind (:map prog-mode-map ("C-\\" . fishman/smart-comment))
+  :config (fishman/save-current-buffer-around 'smart-comment))
 
-(defun fishman-smart-comment-fun (arg)
+(defun fishman/smart-comment (arg)
   (interactive "*P")
   (smart-comment arg)
   (forward-line))
 
 (require 'newcomment)
 (customize-set-value 'comment-style 'extra-line)
-(fishman-save-current-buffer-around 'comment-or-uncomment-region)
+(fishman/save-current-buffer-around 'comment-or-uncomment-region)
 
-(defun fishman-comment-fun ()
+(defun fishman/comment-fun ()
   (interactive)
   (if (use-region-p)
       (progn

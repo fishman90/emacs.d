@@ -4,25 +4,25 @@
   :custom (gofmt-command "goimports")
   :bind (:map go-mode-map
 	      ("C-c C-i" . go-import-add)
-	      ("C-\\" . fishman-comment-fun)
+	      ("C-\\" . fishman/comment-fun)
 	      ("M-\\" . gofmt))
   :hook (go-mode .
 		 (lambda ()
 		   (setq-local indent-tabs-mode t tab-width 4)
 		   (lsp-deferred)))
   :config ; nofmt
-  (fishman-save-some-buffers-before 'go-import-add)
-  (fishman-save-current-buffer-around 'gofmt))
+  (fishman/save-some-buffers-before 'go-import-add)
+  (fishman/save-current-buffer-around 'gofmt))
 
 (use-package go-tag
   :config ; nofmt
-  (fishman-save-current-buffer-around 'go-tag-add)
-  (fishman-save-current-buffer-around 'go-tag-remove)
-  (fishman-save-current-buffer-around 'go-tag-refresh))
+  (fishman/save-current-buffer-around 'go-tag-add)
+  (fishman/save-current-buffer-around 'go-tag-remove)
+  (fishman/save-current-buffer-around 'go-tag-refresh))
 
 (use-package go-impl
   :bind (:map go-mode-map ("M-i" . go-impl))
-  :config (fishman-save-some-buffers-before 'go-impl))
+  :config (fishman/save-some-buffers-before 'go-impl))
 
 (use-package go-fill-struct
-  :config (fishman-save-current-buffer-around 'go-fill-struct))
+  :config (fishman/save-current-buffer-around 'go-fill-struct))

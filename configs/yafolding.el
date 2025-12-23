@@ -3,4 +3,4 @@
 (use-package yafolding
   :bind (:map prog-mode-map ("C-t" . yafolding-toggle-element))
   :hook (prog-mode . yafolding-mode)
-  :config (fishman-save-current-buffer-before 'yafolding-toggle-element))
+  :config (fishman/save-current-buffer-before 'yafolding-toggle-element))

@@ -1,6 +1,6 @@
 ;;-*- lexical-binding: t; -*-
 
-(defun fishman-treemacs-toggle-fun ()
+(defun fishman/treemacs-toggle ()
   (interactive)
   (setq treemacs-position 'left)
   (treemacs))
@@ -13,7 +13,7 @@
 	   (treemacs-follow-after-init t)
 	   (treemacs-recenter-after-file-follow 'always)
 	   (vc-follow-symlinks t))
-  :bind ("<f5>" . fishman-treemacs-toggle-fun)
+  :bind ("<f5>" . fishman/treemacs-toggle)
   :config ; nofmt
   (setq treemacs--width-is-locked nil)
   (treemacs-fringe-indicator-mode 'always)
@@ -23,23 +23,23 @@
   (add-hook 'helm-before-initialize-hook
 	    (lambda ()
 	      (when (equal (treemacs-current-visibility) 'visible)
-		(fishman-treemacs-toggle-fun))))
+		(fishman/treemacs-toggle))))
   (add-hook 'helm-cleanup-hook
 	    (lambda ()
 	      (unless (equal (treemacs-current-visibility) 'visible)
-		(fishman-treemacs-toggle-fun))))
+		(fishman/treemacs-toggle))))
 
-  (defvar fishman-treemacs-window-exists nil)
+  (defvar fishman/treemacs-window-exists nil)
 
   (advice-add 'undo-tree-visualize :before
 	      (lambda (&rest _)
 		(when (equal (treemacs-current-visibility) 'visible)
-		  (setq fishman-treemacs-window-exists t)
-		  (fishman-treemacs-toggle-fun))))
+		  (setq fishman/treemacs-window-exists t)
+		  (fishman/treemacs-toggle))))
   (advice-add 'undo-tree-visualizer-quit :after
 	      (lambda (&rest _)
-		(when fishman-treemacs-window-exists
+		(when fishman/treemacs-window-exists
 		  (let ((window (selected-window)))
-		    (setq fishman-treemacs-window-exists nil)
-		    (fishman-treemacs-toggle-fun)
+		    (setq fishman/treemacs-window-exists nil)
+		    (fishman/treemacs-toggle)
 		    (select-window window))))))

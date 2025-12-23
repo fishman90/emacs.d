@@ -1,6 +1,6 @@
 ;;-*- lexical-binding: t; -*-
 
-(defun fishman-symbols-outline-toggle-fun ()
+(defun fishman/symbols-outline-toggle ()
   (interactive)
   (when (derived-mode-p 'prog-mode)
     (let ((window (get-buffer-window symbols-outline-buffer-name)))
@@ -11,7 +11,7 @@
 (use-package symbols-outline
   :custom ((symbols-outline-no-other-window nil)
 	   (symbols-outline-ignore-variable-symbols nil))
-  :bind ("<f6>" . fishman-symbols-outline-toggle-fun)
+  :bind ("<f6>" . fishman/symbols-outline-toggle)
   :hook ; nofmt
   (lsp-mode .
 	    (lambda ()
@@ -30,22 +30,22 @@
 		(unless (window-valid-p window)
 		  (symbols-outline-show)))))
 
-  (defvar fishman-symbols-outline-window-exists nil)
-  (defvar fishman-current-selected-window nil)
+  (defvar fishman/symbols-outline-window-exists nil)
+  (defvar fishman/current-selected-window nil)
 
   (advice-add 'undo-tree-visualize :before
 	      (lambda (&rest _)
 		(let ((window
 		       (get-buffer-window symbols-outline-buffer-name)))
 		  (when (and window (window-live-p window))
-		    (setq fishman-symbols-outline-window-exists t)
-		    (setq fishman-current-selected-window
+		    (setq fishman/symbols-outline-window-exists t)
+		    (setq fishman/current-selected-window
 			  (selected-window))
 		    (delete-window window)))))
   (advice-add 'undo-tree-visualizer-quit :after
 	      (lambda (&rest _)
-		(when fishman-symbols-outline-window-exists
+		(when fishman/symbols-outline-window-exists
 		  (symbols-outline-show)
-		  (select-window fishman-current-selected-window)
-		  (setq fishman-symbols-outline-window-exists nil)
-		  (setq fishman-current-selected-window nil)))))
+		  (select-window fishman/current-selected-window)
+		  (setq fishman/symbols-outline-window-exists nil)
+		  (setq fishman/current-selected-window nil)))))

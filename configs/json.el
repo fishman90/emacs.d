@@ -1,6 +1,6 @@
 ;;-*- lexical-binding: t; -*-
 
-(defun fishman-json-format ()
+(defun fishman/json-format ()
   (interactive)
   (when (use-region-p)
     (save-current-buffer)

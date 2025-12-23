@@ -39,38 +39,38 @@
 (customize-set-value 'compilation-scroll-output t)
 (add-hook 'compilation-filter-hook 'ansi-color-compilation-filter)
 
-(defun fishman-save-current-buffer ()
+(defun fishman/save-current-buffer ()
   (interactive)
   (let ((inhibit-message t))
     (when buffer-file-name (save-buffer))))
 
-(defmacro fishman-save-current-buffer-before (fun)
+(defmacro fishman/save-current-buffer-before (fun)
   `(advice-add ,fun :before
-	       (lambda (&rest _) (fishman-save-current-buffer))))
+	       (lambda (&rest _) (fishman/save-current-buffer))))
 
-(defmacro fishman-save-current-buffer-around (fun)
+(defmacro fishman/save-current-buffer-around (fun)
   `(advice-add ,fun :around
 	       (lambda (orig-fun &rest args)
-                 (fishman-save-current-buffer)
+                 (fishman/save-current-buffer)
                  (apply orig-fun args)
-                 (fishman-save-current-buffer))))
+                 (fishman/save-current-buffer))))
 
-(fishman-save-current-buffer-around 'indent-region)
+(fishman/save-current-buffer-around 'indent-region)
 
-(defun fishman-save-some-buffers ()
+(defun fishman/save-some-buffers ()
   (interactive)
   (let ((inhibit-message t)) (save-some-buffers t)))
 
-(defmacro fishman-save-some-buffers-before (fun)
+(defmacro fishman/save-some-buffers-before (fun)
   `(advice-add ,fun :before
-	       (lambda (&rest _) (fishman-save-some-buffers))))
+	       (lambda (&rest _) (fishman/save-some-buffers))))
 
-(defmacro fishman-save-some-buffers-around (fun)
+(defmacro fishman/save-some-buffers-around (fun)
   `(advice-add ,fun :around
 	       (lambda (orig-fun &rest args)
-                 (fishman-save-some-buffers)
+                 (fishman/save-some-buffers)
                  (apply orig-fun args)
-                 (fishman-save-some-buffers))))
+                 (fishman/save-some-buffers))))
 
 (load-file (expand-file-name "bootstrap.el" user-emacs-directory))
 

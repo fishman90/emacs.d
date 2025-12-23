@@ -18,7 +18,7 @@
 		 (interactive)
 		 (elfmt-buffer)
 		 (message "Buffer is already formatted"))))
-  :config (fishman-save-current-buffer-around 'elfmt-buffer))
+  :config (fishman/save-current-buffer-around 'elfmt-buffer))
 
 (use-package aggressive-indent
   :hook (emacs-lisp-mode . aggressive-indent-mode))

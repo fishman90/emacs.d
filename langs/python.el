@@ -18,8 +18,8 @@
 (use-package lsp-pyright :custom (lsp-pyright-prefer-remote-env nil))
 
 (use-package python-isort
-  :config (fishman-save-current-buffer-around 'python-isort-buffer))
+  :config (fishman/save-current-buffer-around 'python-isort-buffer))
 
 (use-package blacken
   :custom (blacken-line-length 100)
-  :config (fishman-save-current-buffer-around 'blacken-buffer))
+  :config (fishman/save-current-buffer-around 'blacken-buffer))
