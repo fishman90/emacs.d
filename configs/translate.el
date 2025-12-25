@@ -1,7 +1,8 @@
 ;;-*- lexical-binding: t; -*-
 
+(use-package transient :commands transient--set-layout)
+
 (use-package gt
-  :after transient
   :custom ((gt-langs '(en zh))
 	   (gt-default-translator
 	    (gt-translator :render
