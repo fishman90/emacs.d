@@ -2,7 +2,7 @@
 
 rustup=$(command -v rustup || true)
 if [[ "$rustup" == "" ]]; then
-  curl https://sh.rustup.rs | bash
+  curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
 
   rustup component add rust-analyzer
   rustup component add clippy

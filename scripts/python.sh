@@ -2,7 +2,7 @@
 
 pyenv=$(command -v pyenv || true)
 if [[ "$pyenv" == "" ]]; then
-  curl https://pyenv.run | bash
+  curl -fsSL https://pyenv.run | bash
 else
   pyenv update
 fi

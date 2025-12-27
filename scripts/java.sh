@@ -8,3 +8,7 @@ if [[ "$sdk" == "sdk not found" ]]; then
 else
   sdk selfupdate
 fi
+
+target_version="25.0.1-tem"
+sdk install java $target_version
+sdk use java $target_version
