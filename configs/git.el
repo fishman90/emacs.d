@@ -16,3 +16,16 @@
 (use-package magit-todos :after magit :config (magit-todos-mode))
 
 (use-package git-modes)
+
+(require 'conf-mode)
+
+(define-key conf-unix-mode-map (kbd "C-\\") 'fishman/smart-comment)
+
+(define-key conf-unix-mode-map
+	    (kbd "M-\\")
+	    (lambda ()
+	      (interactive)
+	      (setq-local indent-tabs-mode nil tab-width 2)
+	      (if (use-region-p)
+		  (indent-region (region-beginning) (region-end))
+		(indent-region (point-min) (point-max)))))

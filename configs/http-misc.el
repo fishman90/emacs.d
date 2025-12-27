@@ -13,3 +13,17 @@
   :straight (:type git :host github :repo "Prikaz98/grpclient.el")
   :bind (:map grpclient-mode-map ("C-c C-r" . grpclient-send-current))
   :config (fishman/save-current-buffer-before 'grpclient-send-current))
+
+(defun fishman/json-format ()
+  (interactive)
+  (when (use-region-p)
+    (save-current-buffer)
+    (shell-command-on-region
+     (region-beginning)
+     (region-end)
+     "jq ."
+     (current-buffer)
+     t
+     "*jq error*"
+     t)
+    (save-current-buffer)))

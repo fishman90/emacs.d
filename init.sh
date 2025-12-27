@@ -8,10 +8,6 @@ alias emacs="emacs -nw -l ~/.emacs.d/init.el"
 
 export GO111MODULE=on
 
-# Java
-export SDKMAN_DIR="$HOME/.sdkman"
-[ -f "$HOME/.sdkman/bin/sdkman-init.sh" ] && source "$HOME/.sdkman/bin/sdkman-init.sh"
-
 # Python
 export PYENV_ROOT="$HOME/.pyenv"
 export PATH="$PYENV_ROOT/bin":"$PATH"
@@ -21,3 +17,5 @@ eval "$(pyenv virtualenv-init -)" 2>/dev/null || true
 
 # Rust
 [ -f "$HOME/.cargo/env" ] && source "$HOME/.cargo/env"
+
+# Shell
