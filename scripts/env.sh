@@ -8,6 +8,9 @@ alias emacs="emacs -nw -l ~/.emacs.d/init.el"
 
 export GO111MODULE=on
 
+# Haskell
+[ -f "$HOME/.ghcup/env" ] && . "$HOME/.ghcup/env"
+
 # Python
 export PYENV_ROOT=~/.pyenv
 export PATH=$PYENV_ROOT/bin:$PATH
