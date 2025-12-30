@@ -7,7 +7,7 @@
   (general-define-key :keymaps 'org-mode-map "C-c C-r" 'verb-send-request-on-point-display))
 
 (use-package curl-to-elisp
-  :config (fishman/save-current-buffer-before 'curl-to-elisp-verb))
+  :config (fishman/save-current-buffer-around 'curl-to-elisp-verb))
 
 (use-package grpclient
   :straight (:type git :host github :repo "Prikaz98/grpclient.el")
