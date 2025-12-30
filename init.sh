@@ -2,7 +2,7 @@
 
 alias emacs="emacs -nw -l ~/.emacs.d/init.el"
 
-# Elxir
+# Elixir
 eval "$(mise activate zsh)" 2>/dev/null || true
 
 # Golang
