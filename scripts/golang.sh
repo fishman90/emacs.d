@@ -19,4 +19,5 @@ go install -v github.com/ajmesa9891/impl/goimpl@latest
 go install -v github.com/davidrjenni/reftools/cmd/fillstruct@latest
 go install -v honnef.co/go/tools/cmd/staticcheck@latest
 go install -v github.com/golangci/golangci-lint/v2/cmd/golangci-lint@latest
+go install -v github.com/cweill/gotests/gotests@latest
 go install -v github.com/go-delve/delve/cmd/dlv@latest
