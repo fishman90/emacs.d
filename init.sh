@@ -19,3 +19,11 @@ eval "$(pyenv virtualenv-init -)" 2>/dev/null || true
 
 # Rust
 [ -f "$HOME/.cargo/env" ] && source "$HOME/.cargo/env"
+
+# Shell
+export PATH="/snap/bin":"$PATH"
+
+# Zig
+export ZVM_INSTALL="$HOME/.zvm/self"
+export PATH="$HOME/.zvm/bin:$PATH"
+export PATH="$ZVM_INSTALL:$PATH"
