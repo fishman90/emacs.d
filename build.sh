@@ -12,3 +12,6 @@ tar xvf emacs-"$target_version".tar.gz
     make -j"$(nproc)" &&
     sudo make install
 )
+
+rm emacs-"$target_version".tar.gz
+rm -rf emacs-emacs-"$target_version"

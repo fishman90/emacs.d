@@ -12,5 +12,7 @@ sudo apt autoclean
 
 go install github.com/fullstorydev/grpcurl/cmd/grpcurl@latest
 
+pip install --user --upgrade tombi
+
 cargo install --git https://github.com/BurntSushi/ripgrep.git --branch master ripgrep
 cargo install --git https://github.com/sharkdp/fd.git --branch master fd-find

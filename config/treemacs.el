@@ -15,6 +15,7 @@
   (treemacs-filewatch-mode)
   (treemacs-follow-mode)
   (treemacs-project-follow-mode)
+
   (add-hook 'helm-before-initialize-hook
 	    (lambda ()
 	      (when (equal (treemacs-current-visibility) 'visible)
@@ -24,7 +25,7 @@
 	      (unless (equal (treemacs-current-visibility) 'visible)
 		(treemacs))))
 
-  (defvar fishman/treemacs-window-exists)
+  (defvar fishman/treemacs-window-exists nil)
 
   (advice-add 'undo-tree-visualize :before
 	      (lambda (&rest _)

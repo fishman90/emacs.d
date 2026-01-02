@@ -18,6 +18,7 @@
 	      (setq-local symbols-outline-fetch-fn 'symbols-outline-lsp-fetch)))
   (prog-mode . symbols-outline-follow-mode)
   :config ; nofmt
+
   (add-hook 'helm-before-initialize-hook
 	    (lambda ()
 	      (let ((window
@@ -30,8 +31,8 @@
 		(unless (window-valid-p window)
 		  (symbols-outline-show)))))
 
-  (defvar fishman/symbols-outline-window-exists)
-  (defvar fishman/current-selected-window)
+  (defvar fishman/symbols-outline-window-exists nil)
+  (defvar fishman/current-selected-window nil)
 
   (advice-add 'undo-tree-visualize :before
 	      (lambda (&rest _)

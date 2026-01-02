@@ -53,9 +53,6 @@
 		      (goto-char (point-max))))
 
 (general-define-key :keymaps 'override "S-<up>" 'windmove-up)
-
 (general-define-key :keymaps 'override "S-<down>" 'windmove-down)
-
 (general-define-key :keymaps 'override "S-<left>" 'windmove-left)
-
 (general-define-key :keymaps 'override "S-<right>" 'windmove-right)

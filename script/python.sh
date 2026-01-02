@@ -15,4 +15,3 @@ pyenv global $target_version
 
 pip install --user --upgrade pip pip-autoremove
 pip install --user --upgrade pyright isort black autoflake
-pip install --user --upgrade poetry tombi

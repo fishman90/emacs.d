@@ -72,12 +72,12 @@
 
 (load-file (expand-file-name "bootstrap.el" user-emacs-directory))
 
-(dolist (config-dir '("configs" "langs"))
+(dolist (config-dir '("config" "lang"))
   (mapc
    (lambda (config-file) (load-file config-file))
    (directory-files
     (expand-file-name config-dir user-emacs-directory)
-    :match "\\.el$")))
+    :match "\\.el\\'")))
 
 (customize-set-value 'custom-file
 		     (expand-file-name "custom.el" user-emacs-directory))
