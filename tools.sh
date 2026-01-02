@@ -10,5 +10,7 @@ sudo apt install -y wget
 sudo apt autoremove -y
 sudo apt autoclean
 
-sudo snap refresh
-sudo snap install --edge grpcurl
+go install github.com/fullstorydev/grpcurl/cmd/grpcurl@latest
+
+cargo install --git https://github.com/BurntSushi/ripgrep.git --branch master ripgrep
+cargo install --git https://github.com/sharkdp/fd.git --branch master fd-find

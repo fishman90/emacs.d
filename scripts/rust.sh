@@ -13,6 +13,3 @@ if [[ "$rustup" == "" ]]; then
 else
   rustup update
 fi
-
-cargo install --git https://github.com/BurntSushi/ripgrep.git --branch master ripgrep
-cargo install --git https://github.com/sharkdp/fd.git --branch master fd-find
