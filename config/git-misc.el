@@ -6,7 +6,10 @@
   ("C-x j" . magit-log-current)
   ("C-x y" . magit-log-buffer-file)
   :hook ; nofmt
-  (magit-status-mode . display-line-numbers-mode)
+  (magit-status-mode .
+		     (lambda ()
+		       (display-line-numbers-mode)
+		       (setq-local tab-width 4)))
   (magit-log-mode . display-line-numbers-mode)
   :config ; nofmt
   (fishman/save-some-buffers-before 'magit-status)
