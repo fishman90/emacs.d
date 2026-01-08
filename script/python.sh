@@ -9,9 +9,9 @@ fi
 
 pyenv doctor
 
-target_version="3.11.14"
-pyenv install -s $target_version
-pyenv global $target_version
+latest_version="3.14.2"
+pyenv install -s $latest_version
+pyenv global $latest_version
 
 pip install --user --upgrade pip pip-autoremove
 pip install --user --upgrade pyright isort black autoflake

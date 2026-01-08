@@ -7,8 +7,7 @@ else
   g self update
 fi
 
-target_version="1.24.2"
-g install $target_version
+g install latest
 
 go telemetry off
 
