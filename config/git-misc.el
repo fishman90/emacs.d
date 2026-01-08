@@ -11,6 +11,7 @@
 		       (display-line-numbers-mode)
 		       (setq-local tab-width 4)))
   (magit-log-mode . display-line-numbers-mode)
+  (magit-revision-mode . display-line-numbers-mode)
   :config ; nofmt
   (fishman/save-some-buffers-before 'magit-status)
   (fishman/save-some-buffers-before 'magit-log-current)
