@@ -2,9 +2,9 @@
 
 zvm=$(command -v zvm || true)
 if [[ "$zvm" == "" ]]; then
-  curl https://raw.githubusercontent.com/tristanisham/zvm/master/install.sh | bash
+    curl https://raw.githubusercontent.com/tristanisham/zvm/master/install.sh | bash
 else
-  zvm upgrade
+    zvm upgrade
 fi
 
 zvm install --zls --full master

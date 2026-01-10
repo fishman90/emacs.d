@@ -2,9 +2,9 @@
 
 g=$(command -v g || true)
 if [[ "$g" == "" ]]; then
-  curl -sSL https://raw.githubusercontent.com/voidint/g/master/install.sh | bash
+    curl -sSL https://raw.githubusercontent.com/voidint/g/master/install.sh | bash
 else
-  g self update
+    g self update
 fi
 
 g install latest

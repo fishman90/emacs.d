@@ -72,7 +72,7 @@
 
 (load-file (expand-file-name "bootstrap.el" user-emacs-directory))
 
-(dolist (config-dir '("config" "lang"))
+(dolist (config-dir '("basic-config" "lang-config"))
   (mapc
    (lambda (config-file) (load-file config-file))
    (directory-files

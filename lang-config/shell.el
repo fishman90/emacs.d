@@ -4,11 +4,11 @@
 
 (custom-set-variables
  '(sh-basic-offset 2)
- '(sh-indentation 2)
+ '(sh-indentation 4)
  '(sh-indent-comment t))
 
 (use-package shfmt
-  :custom (shfmt-arguments '("-i" "2"))
+  :custom (shfmt-arguments '("-i" "4"))
   :bind (:map sh-mode-map
 	      ("M-\\" .
 	       (lambda ()
@@ -22,5 +22,5 @@
 
 (add-hook 'sh-mode-hook
 	  (lambda ()
-	    (setq-local indent-tabs-mode nil tab-width 2)
+	    (setq-local indent-tabs-mode nil tab-width 4)
 	    (lsp-deferred)))

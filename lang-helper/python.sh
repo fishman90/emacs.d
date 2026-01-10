@@ -2,9 +2,9 @@
 
 pyenv=$(command -v pyenv || true)
 if [[ "$pyenv" == "" ]]; then
-  curl -fsSL https://pyenv.run | bash
+    curl -fsSL https://pyenv.run | bash
 else
-  pyenv update
+    pyenv update
 fi
 
 pyenv doctor

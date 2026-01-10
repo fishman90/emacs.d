@@ -2,9 +2,9 @@
 
 mise=$(command -v mise || true)
 if [[ "$mise" == "" ]]; then
-  curl https://mise.run | sh
+    curl https://mise.run | sh
 else
-  mise self-update
+    mise self-update
 fi
 
 mise use -g erlang@latest
