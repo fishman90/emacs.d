@@ -1,7 +1,7 @@
 #! /bin/bash
 
 zvm=$(command -v zvm || true)
-if [[ "$zvm" == "" ]]; then
+if [[ $zvm == "" ]]; then
     curl https://raw.githubusercontent.com/tristanisham/zvm/master/install.sh | bash
 else
     zvm upgrade

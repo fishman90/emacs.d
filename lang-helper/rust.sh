@@ -1,7 +1,7 @@
 #! /bin/bash
 
 rustup=$(command -v rustup || true)
-if [[ "$rustup" == "" ]]; then
+if [[ $rustup == "" ]]; then
     curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
 
     rustup component add rust-analyzer
