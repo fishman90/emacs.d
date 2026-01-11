@@ -13,3 +13,8 @@ if [[ $rustup == "" ]]; then
 else
     rustup update
 fi
+
+cargo install --git https://github.com/tombi-toml/tombi.git --branch main tombi-cli
+
+cargo install --git https://github.com/sharkdp/fd.git --branch master fd-find
+cargo install --git https://github.com/BurntSushi/ripgrep.git --branch master ripgrep

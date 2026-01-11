@@ -7,7 +7,9 @@ else
     g self update
 fi
 
-g install latest
+latest_version=$(g ls-remote stable | tail -n 1 | grep -oP '\**\s*\K\d\.\d{1,2}\.\d{1,2}')
+g install $latest_version
+g use $latest_version
 
 go telemetry off
 
@@ -22,3 +24,5 @@ go install -v github.com/davidrjenni/reftools/cmd/fillstruct@latest
 go install -v github.com/cweill/gotests/gotests@latest
 
 go install -v github.com/go-delve/delve/cmd/dlv@latest
+
+go install -v github.com/fullstorydev/grpcurl/cmd/grpcurl@latest
