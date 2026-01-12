@@ -9,7 +9,7 @@ fi
 
 pyenv doctor
 
-latest_version=$(pyenv install --list | grep -oP '^\s*\d\.\d{1,2}\.\d{1,2}$' | tail -n 1)
+latest_version=$(pyenv install --list | grep -oP '^\s+\d\.\d{1,2}\.\d{1,2}$' | tail -n 1)
 pyenv install -s $latest_version
 pyenv global $latest_version
 

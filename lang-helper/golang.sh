@@ -7,7 +7,7 @@ else
     g self update
 fi
 
-latest_version=$(g ls-remote stable | tail -n 1 | grep -oP '\**\s*\K\d\.\d{1,2}\.\d{1,2}')
+latest_version=$(g ls-remote stable | tail -n 1 | grep -oP '\**\s+\K\d\.\d{1,2}\.\d{1,2}')
 g install $latest_version
 g use $latest_version
 

@@ -7,4 +7,4 @@ else
     zvm upgrade
 fi
 
-zvm install --zls --full master
+zvm install --zls --full $(zvm ls --all | grep 'zls tagged' | awk 'NR==1{print $1}')
