@@ -3,7 +3,7 @@
 (require 'sh-script)
 
 (custom-set-variables
- '(sh-basic-offset 2)
+ '(sh-basic-offset 4)
  '(sh-indentation 4)
  '(sh-indent-comment t))
 
