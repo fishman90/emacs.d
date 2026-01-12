@@ -19,6 +19,7 @@
 (prefer-coding-system 'utf-8)
 (global-auto-revert-mode)
 (customize-set-value 'enable-local-variables :safe)
+(customize-set-value 'large-file-warning-threshold (* 100 1024 1024))
 
 (customize-set-value 'auto-save-default nil)
 (customize-set-value 'make-backup-files nil)
