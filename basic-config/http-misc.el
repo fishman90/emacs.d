@@ -3,9 +3,9 @@
 (use-package verb
   :custom ((verb-auto-show-headers-buffer t)
 	   (verb-show-timeout-warning 30))
-  :bind (:map org-mode-map ("C-c C-c" . verb-export-request-on-point))
   :config ; nofmt
   (fishman/save-current-buffer-around 'verb-export-request-on-point)
+  (general-define-key :keymaps 'org-mode-map "C-c C-c" 'verb-export-request-on-point)
   (fishman/save-current-buffer-before 'verb-send-request-on-point-display)
   (general-define-key :keymaps 'org-mode-map "C-c C-r" 'verb-send-request-on-point-display))
 
