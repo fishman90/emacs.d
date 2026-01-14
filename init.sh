@@ -7,14 +7,16 @@ export PATH=~/.local/bin:$PATH
 
 alias emacs="emacs -nw -l ~/.emacs.d/init.el"
 
-# Elixir
-eval "$(mise activate zsh)" 2>/dev/null || true
+# Bash
+export PATH=/snap/bin:$PATH
 
 # Golang
 [ -f $HOME/.g/env ] && source $HOME/.g/env
 
 export GO111MODULE=on
 export CGO_ENABLED=0
+
+# Java
 
 # Python
 export PYENV_ROOT=$HOME/.pyenv
@@ -25,9 +27,6 @@ eval "$(pyenv virtualenv-init -)" 2>/dev/null || true
 
 # Rust
 [ -f $HOME/.cargo/env ] && source $HOME/.cargo/env
-
-# Shell
-export PATH=/snap/bin:$PATH
 
 # Zig
 export ZVM_INSTALL=$HOME/.zvm/self

@@ -7,6 +7,8 @@ else
     g self update
 fi
 
+using_version=$(go version | grep -oP '\d\.\d{1,2}\.\d{1,2}')
+
 latest_version=$(g ls-remote stable | tail -n 1 | grep -oP '\**\s+\K\d\.\d{1,2}\.\d{1,2}')
 g install $latest_version
 g use $latest_version
@@ -26,3 +28,5 @@ go install -v github.com/cweill/gotests/gotests@latest
 go install -v github.com/go-delve/delve/cmd/dlv@latest
 
 go install -v github.com/fullstorydev/grpcurl/cmd/grpcurl@latest
+
+g use $using_version
