@@ -40,6 +40,8 @@
 (customize-set-value 'compilation-scroll-output t)
 (add-hook 'compilation-filter-hook 'ansi-color-compilation-filter)
 
+(which-key-mode)
+
 (defun fishman/save-current-buffer ()
   (interactive)
   (let ((inhibit-message t))
