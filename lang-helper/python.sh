@@ -13,5 +13,5 @@ latest_version=$(pyenv install --list | grep -oP '^\s+\d\.\d{1,2}\.\d{1,2}$' | t
 pyenv install -s $latest_version
 pyenv global $latest_version
 
-python -m pip install --user --upgrade pip pip-autoremove
+python -m pip install --user --upgrade pip pip-autoremove poetry
 python -m pip install --user --upgrade pyright isort black autoflake
