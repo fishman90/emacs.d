@@ -8,5 +8,6 @@
 	       (lambda ()
 		 (interactive)
 		 (flycheck-list-errors)
-		 (switch-to-buffer-other-window flycheck-error-list-buffer))))
+		 (switch-to-buffer-other-window flycheck-error-list-buffer)))
+	      ("C-c C-n" . flycheck-next-error))
   :hook (lsp-mode . flycheck-mode))
