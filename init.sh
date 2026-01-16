@@ -17,6 +17,7 @@ export GO111MODULE=on
 export CGO_ENABLED=0
 
 # Java
+[ -f $HOME/.sdkman/bin/sdkman-init.sh ] && source $HOME/.sdkman/bin/sdkman-init.sh
 
 # Python
 export PYENV_ROOT=$HOME/.pyenv

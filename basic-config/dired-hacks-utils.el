@@ -18,3 +18,5 @@
 			(xref-push-marker-stack)
 			(goto-char (point-max))
 			(dired-hacks-previous-file))))
+
+(use-package f)
