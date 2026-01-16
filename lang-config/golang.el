@@ -24,9 +24,6 @@
   :bind (:map go-mode-map ("M-i" . go-impl))
   :config (fishman/save-some-buffers-before 'go-impl))
 
-(use-package go-fill-struct
-  :config (fishman/save-current-buffer-around 'go-fill-struct))
-
 (use-package go-gen-test
   :config ; nofmt
   (fishman/save-current-buffer-before 'go-gen-test-dwim)

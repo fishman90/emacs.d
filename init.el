@@ -32,8 +32,6 @@
 (electric-pair-mode)
 (electric-quote-mode)
 
-(setq indent-tabs-mode nil)
-
 (fset 'yes-or-no-p 'y-or-n-p)
 
 (require 'ansi-color)
